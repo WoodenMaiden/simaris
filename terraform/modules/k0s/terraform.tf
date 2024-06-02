@@ -6,5 +6,3 @@ terraform {
     }
   }
 }
-
-# provider "k0s" {}

@@ -1,12 +1,12 @@
 terraform {
   required_providers {
     helm = {
-      source = "hashicorp/helm"
+      source  = "hashicorp/helm"
       version = "2.13.2"
     }
 
     kubernetes = {
-      source = "hashicorp/kubernetes"
+      source  = "hashicorp/kubernetes"
       version = "2.30.0"
     }
   }
@@ -19,5 +19,5 @@ provider "helm" {
 }
 
 provider "kubernetes" {
-  config_path = module.k0s.kubernetes_config_path 
+  config_path = module.k0s.kubernetes_config_path
 }
