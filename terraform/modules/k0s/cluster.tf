@@ -1,12 +1,12 @@
 resource "k0s_cluster" "simaris-santuary" {
-  name    = "simaris-santuary"
+  name = "simaris-santuary"
 
   version = "v1.30.1+k0s.0"
 
-  hosts = [ for i, v in concat(local.controllers, local.workers, local.both_roles): {
-      role = i < length(local.controllers)? "controller": (
-        i < length(local.controllers) + length(local.workers)? "worker": "controller+worker"
-      )
+  hosts = [for i, v in concat(local.controllers, local.workers, local.both_roles) : {
+    role = i < length(local.controllers) ? "controller" : (
+      i < length(local.controllers) + length(local.workers) ? "worker" : "controller+worker"
+    )
 
     ssh = {
       address  = v
