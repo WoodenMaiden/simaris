@@ -1,4 +1,4 @@
-# Delete me when the cluster isnt single node anymore
+# Delete me when the cluster isn't single node anymore
 
 cli:
   tolerations:

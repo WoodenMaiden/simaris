@@ -12,3 +12,16 @@ spec:
         kind: HelmRepository
         name: ingress-nginx
       interval: 12h
+  values:
+    controller:
+      tolerations:
+      - key: "node-role.kubernetes.io/master"
+        operator: "Exists"
+        effect: "NoSchedule"
+
+      admissionWebhooks:
+        patch:
+          tolerations:
+          - key: "node-role.kubernetes.io/master"
+            operator: "Exists"
+            effect: "NoSchedule"

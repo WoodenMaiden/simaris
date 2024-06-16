@@ -11,3 +11,11 @@ kustomization:
     interval: 5m
     prune: true
     wait: true
+
+# Delete the following lines when the cluster isn't single node anymore
+
+cli:
+  tolerations:
+  - key: "node-role.kubernetes.io/master"
+    operator: "Exists"
+    effect: "NoSchedule"
